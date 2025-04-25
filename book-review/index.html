@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>書評文章 | 備份君</title>
+    <meta name="description" content="備份君精選書評文章總覽，涵蓋自我成長、思維策略、職場心法等主題。" />
+    <link rel="stylesheet" href="/css/index.css"> <!-- 若有需要可加自己的 CSS -->
+  </head>
+  <body>
+    <main>
+      <h1>📚 書評文章</h1>
+      <ul id="review-list">
+        <li>載入中...</li>
+      </ul>
+    </main>
+
+    <script>
+      fetch('/content.json')
+        .then(res => res.json())
+        .then(data => {
+          const reviews = data.posts.filter(post =>
+            post.categories && post.categories.includes("書評")
+          );
+
+          const list = document.getElementById('review-list');
+          list.innerHTML = '';
+
+          reviews.forEach(post => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${post.path}">${post.title}</a>`;
+            list.appendChild(li);
+          });
+        });
+    </script>
+  </body>
+</html>
