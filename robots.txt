@@ -1,0 +1,7 @@
+UUser-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /drafts/
+
+Sitemap: https://www.backupkun.com/sitemap.xml
