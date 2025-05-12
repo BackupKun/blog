@@ -4,4 +4,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /drafts/
 
-Sitemap: https://www.backupkun.com/sitemap.xml
+Sitemap: https://backupkun.com/sitemap.xml
